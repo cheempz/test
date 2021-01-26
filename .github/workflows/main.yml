@@ -17,11 +17,12 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
+    container: ${{ matrix.os }}
     # The type of runner that the job will run on
-    runs-on: ${{ matrix.os }}-latest
+    #runs-on:     
     strategy:
       matrix:
-        os: [centos, debian]
+        os: [centos:7, debian:10]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
