@@ -17,10 +17,9 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-    container:
-      image: ${{ matrix.os }}
+    container: ${{ matrix.os }}
     # The type of runner that the job will run on
-    #runs-on:     
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         os: [centos:7, debian:10]
