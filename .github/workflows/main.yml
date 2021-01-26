@@ -22,19 +22,26 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        os: ["centos:7", "debian:10"]
+        os: ['centos:7', 'debian:10']
+        node_version: ['9', '10']
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
+        
+      # Install node version
+      - name: Use Node.js ${{ matrix.node_version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node_version }}
+          
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, world!
+        run: npm --version
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          cat /etc/os-releases
+          pwd
