@@ -15,7 +15,6 @@ on:
     inputs:
       checkout-ref:
         description: branch, tag or commit to checkout
-        required: true
         default: $GITHUB_SHA
   
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -38,6 +37,8 @@ jobs:
         
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.inputs.checkout-ref }}
         
       # Install node version
       #- name: Use Node.js ${{ matrix.node_version }}
