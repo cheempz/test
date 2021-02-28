@@ -57,6 +57,7 @@ jobs:
           pwd
           ls -la
           echo "${{ toJSON(github.event.inputs) }}"
+          git rev-parse --abbrev-ref HEAD
           git rev-parse HEAD
           
 
