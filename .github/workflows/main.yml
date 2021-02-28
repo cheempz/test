@@ -38,7 +38,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
         with:
-          ref: ${{ github.event.inputs.checkout-ref }}
+          ref: ${{ github.event.inputs.checkout-ref || $GITHUB_SHA }}
         
       # Install node version
       #- name: Use Node.js ${{ matrix.node_version }}
