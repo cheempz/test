@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
     inputs:
       checkout-ref:
-        description: branch, tag or commit to checkout
+        description: branch, tag or SHA to checkout
         default: $GITHUB_SHA
   
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -56,6 +56,7 @@ jobs:
           cat /etc/os-release
           pwd
           ls -la
-          echo "${{ toJSON(github.event) }}"
+          echo "${{ toJSON(github.event.inputs) }}"
+          git rev-parse HEAD
           
 
