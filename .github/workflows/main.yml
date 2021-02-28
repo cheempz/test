@@ -46,6 +46,6 @@ jobs:
           cat /etc/os-release
           pwd
           ls -la
-          echo ${{ toJSON(github.event) }}
+          ${{ toJSON(github.event) }}
           
 
