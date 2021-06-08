@@ -26,7 +26,7 @@ jobs:
     strategy:
       matrix:
         os: ['centos:7', 'debian:10']
-        node_version: ['9', '10']
+        node_version: ['12', '14', '16']
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -56,6 +56,5 @@ jobs:
           pwd
           ls -la
           echo "${{ toJSON(github.event.inputs) }}"
-          git rev-parse HEAD
           
 
