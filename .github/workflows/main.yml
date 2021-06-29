@@ -66,6 +66,6 @@ jobs:
       run: |
         pwd
         ls -la
-        cat ./foobar
+
           
 
