@@ -56,5 +56,15 @@ jobs:
           pwd
           ls -la
           echo "${{ toJSON(github.event.inputs) }}"
+          cat /etc/os-release >> foobar
+          
+  check:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run a multi-line script
+      run: |
+        pwd
+        ls -la
+        cat ./foobar
           
 
