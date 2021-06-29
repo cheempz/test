@@ -62,10 +62,15 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.inputs.checkout-ref }}
     - name: Run a multi-line script
       run: |
         pwd
         ls -la
+        ls -la ../
+        ls -la ../../
 
           
 
