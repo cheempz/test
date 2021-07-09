@@ -10,7 +10,9 @@ jobs:
     
     steps:
       - name: show user
-        run: id
+        run: |
+          id
+          env | sort
 
   container-test:
     runs-on: ubuntu-latest 
@@ -23,8 +25,6 @@ jobs:
 
       - name: Show Info
         run: |
-          whoami
-          cat /etc/passwd
-          cat /etc/os-release
+          id
           ls -al
       
