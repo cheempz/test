@@ -28,5 +28,6 @@ jobs:
       - name: Show Info
         run: |
           id
-          ls -al
+          ls -alR
+          npm install @appoptics/apm-bindings
       
