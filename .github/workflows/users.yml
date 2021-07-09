@@ -18,7 +18,9 @@ jobs:
     runs-on: ubuntu-latest 
     container:
       image: node:16-alpine3.11
-      options: --user 1001
+      ## or force container to run as the VM user `runner (1001)`
+      ## https://github.com/actions/runner/issues/691 is a more polished version that doesn't assume 1001
+      ## options: --user 1001
 
     steps:
       - name: Checkout ${{ github.ref }}
