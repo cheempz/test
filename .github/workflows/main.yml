@@ -55,6 +55,7 @@ jobs:
           cat /etc/os-release
           pwd
           ls -la
+          echo "--- ${{matrix.os}} ---"
           echo "${{ toJSON(github.event.inputs) }}"
           touch ./foobar
           ls -la
